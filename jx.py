@@ -11,6 +11,7 @@ import  os
 import pyjokes
 import wikipedia
 import sys
+import joke
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -58,6 +59,9 @@ def wish():
         speak("good evening sir")
 
     speak("I am zera sir how may i help you")
+ def joke():
+    My_joke = pyjokes.get_joke(language="en", category="neutral")
+    speak(My_joke)
 
 def location():
     try:
@@ -174,6 +178,8 @@ if __name__ == '__main__':
             location()
         elif "ip" in query:
             ip()
+        elif "tell me a jokes " in query:
+            joke()
 
 
 
