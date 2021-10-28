@@ -11,6 +11,8 @@ import  os
 import pyjokes
 import wikipedia
 import sys
+import joke
+import webbrowser
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -58,6 +60,9 @@ def wish():
         speak("good evening sir")
 
     speak("I am zera sir how may i help you")
+ def joke():
+    My_joke = pyjokes.get_joke(language="en", category="neutral")
+    speak(My_joke)
 
 def location():
     try:
@@ -145,7 +150,8 @@ if __name__ == '__main__':
             speak("I am fine as long as you maintain your computer")
         elif "who created you" in query:
             speak(" my develover  created me ")
-
+        elif "open google in browser" in query:
+            webbrowser.open(www.google.com)
 
         elif "on youtube" in query:
             speak("playing  on youtube")
@@ -174,6 +180,8 @@ if __name__ == '__main__':
             location()
         elif "ip" in query:
             ip()
+        elif "tell me a jokes " in query:
+            joke()
 
 
 
