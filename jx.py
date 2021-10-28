@@ -12,6 +12,7 @@ import pyjokes
 import wikipedia
 import sys
 import joke
+import webbrowser
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -149,7 +150,8 @@ if __name__ == '__main__':
             speak("I am fine as long as you maintain your computer")
         elif "who created you" in query:
             speak(" my develover  created me ")
-
+        elif "open google in browser" in query:
+            webbrowser.open(www.google.com)
 
         elif "on youtube" in query:
             speak("playing  on youtube")
